@@ -270,7 +270,7 @@ button {
 }
 
 .winner::after {
-    box-shadow: 0 0 0 40px #293251, 0 0 0 80px #232c4b, 0 0 0 130px #1e2949;
+    box-shadow: 0 0 0 20px #293251, 0 0 0 40px #232c4b, 0 0 0 70px #1e2949;
     z-index: -2;
 }
 
@@ -340,6 +340,8 @@ button {
         place-items: center;
     }
     
+    
+
     .game-start-container::before {
         content: '';
         height: 80%;
@@ -373,6 +375,7 @@ button {
         align-items: center;
         height: 100vh;
         width: 100%;
+        transition: 0.5s;
     }
     
     .rules-main-content {
@@ -472,6 +475,11 @@ button {
         text-align: center;
         font-weight: bold;
         margin-bottom: 20px;
+    }
+
+    .winner::after {
+        box-shadow: 0 0 0 40px #293251, 0 0 0 80px #232c4b, 0 0 0 130px #1e2949;
+        z-index: -2;
     }
     
     .play-again-button {

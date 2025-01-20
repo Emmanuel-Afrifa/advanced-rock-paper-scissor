@@ -11,7 +11,6 @@ const GameInSession = ({allStates, setStates}) => {
     const selectedCPUPiece = React.useRef(null)
 
     const checkWin = (player, cpu) => {
-        console.log(player, cpu)
         if ((player === 'paper' && cpu === 'scissors') || (player === 'scissors' && cpu === 'paper')){
             return 'scissors';
         }
@@ -26,37 +25,42 @@ const GameInSession = ({allStates, setStates}) => {
         }
     }
 
-    const piecesObj = {
-        'paper': {
-            img: paper,
-            className: 'paper-container',
-            id: 'piece-paper'
-        },
-        'scissors': {
-            img: scissors,
-            className: 'scissors-container',
-            id: 'piece-scissors'
-        },
-        'rock': {
-            img: rock,
-            className: 'rock-container',
-            id: 'piece-rock'
+    const piecesObj = React.useMemo(() => (
+        {
+            'paper': {
+                img: paper,
+                className: 'paper-container',
+                id: 'piece-paper'
+            },
+            'scissors': {
+                img: scissors,
+                className: 'scissors-container',
+                id: 'piece-scissors'
+            },
+            'rock': {
+                img: rock,
+                className: 'rock-container',
+                id: 'piece-rock'
+            }
         }
-
-    }
+    ), [])
 
     const selectedPlayerPiece = piecesObj[allStates.playerChose];
 
 
-    const pickCPUPiece = () => {
+    const pickCPUPiece = React.useCallback(() => {
         const pieces = Object.keys(piecesObj);
         return pieces[Math.floor(Math.random()*2)];
-    }
+    }, [piecesObj])
 
 
     
 
     React.useEffect(() => {
+        if (allStates.cpuPlayed){
+            return;
+        }
+
         const cpuChoice = pickCPUPiece();
         selectedCPUPiece.current = piecesObj[cpuChoice];
 
@@ -68,10 +72,9 @@ const GameInSession = ({allStates, setStates}) => {
             });
 
         }, 1000);
-        
     
         return () => clearTimeout(timer);
-    }, []);
+    }, [allStates, pickCPUPiece, piecesObj, setStates]);
 
     React.useEffect(() => {
         if (allStates.cpuChose) {
@@ -110,7 +113,7 @@ const GameInSession = ({allStates, setStates}) => {
                 }));
             }
         }
-    }, [allStates.cpuChose]);
+    }, [allStates.cpuChose,allStates.gameComplete, allStates.playerChose, allStates.score, setStates]);
     
     
 
