@@ -269,6 +269,11 @@ button {
     margin-bottom: 20px;
 }
 
+.winner::after {
+    box-shadow: 0 0 0 40px #293251, 0 0 0 80px #232c4b, 0 0 0 130px #1e2949;
+    z-index: -2;
+}
+
 .play-again-button {
     background-color: white;
     cursor: pointer;
@@ -495,4 +500,30 @@ button {
         justify-content: space-between;
         align-items: center;
     }
+
+    .game-in-session-container {
+        width: 700px;
+        height: 250px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .empty-cpu {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background-color: hsl(237, 49%, 15%);
+        align-self: center;
+    }
+
+    #piece-scissors, #piece-paper, #piece-rock {
+        width: 170px;
+        height: 170px;
+    }
+
+    #piece-scissors img, #piece-paper img, #piece-rock img {
+        transform: scale(1.5);
+    }
 }
+

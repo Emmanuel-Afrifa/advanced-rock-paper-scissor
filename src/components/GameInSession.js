@@ -6,6 +6,8 @@ import scissors from '../images/icon-scissors.svg';
 import ResultDisplay from "./ResultDisplay";
 
 const GameInSession = ({allStates, setStates}) => {
+    const winnerClass = React.useRef('');
+
     const selectedCPUPiece = React.useRef(null)
 
     const checkWin = (player, cpu) => {
@@ -85,6 +87,7 @@ const GameInSession = ({allStates, setStates}) => {
                     score: newScore,
                     gameComplete: true
                 }));
+                winnerClass.current = 'player'
                 localStorage.setItem("score", newScore);
             } 
             else if (gameStatus === allStates.cpuChose) {
@@ -97,6 +100,7 @@ const GameInSession = ({allStates, setStates}) => {
                     gameComplete: true
                 }));
                 localStorage.setItem("score", newScore);
+                winnerClass.current = 'cpu'
             } else if (gameStatus === "draw") {
                 setStates((prevStates) => ({
                     ...prevStates,
@@ -106,15 +110,17 @@ const GameInSession = ({allStates, setStates}) => {
                 }));
             }
         }
-      }, [allStates.cpuChose]);
+    }, [allStates.cpuChose]);
     
+    
+
 
     return (
         <div className="game-in-session-container">
             <div className="player-option">
                 <Piece 
                     img={selectedPlayerPiece.img} 
-                    className={selectedPlayerPiece.className} 
+                    className={winnerClass.current === 'player'? selectedPlayerPiece.className + ' winner' : selectedPlayerPiece.className} 
                     id={selectedPlayerPiece.id}
                 />
                 <p className="description">YOU PICKED</p>
@@ -124,7 +130,7 @@ const GameInSession = ({allStates, setStates}) => {
                     allStates.cpuPlayed ? 
                     <Piece 
                         img={selectedCPUPiece.current.img} 
-                        className={selectedCPUPiece.current.className} 
+                        className={winnerClass.current === 'cpu' ? selectedCPUPiece.current.className + ' winner' : selectedCPUPiece.current.className} 
                         id={selectedCPUPiece.current.id}
                     /> :
                     <div className="empty-cpu"></div>
