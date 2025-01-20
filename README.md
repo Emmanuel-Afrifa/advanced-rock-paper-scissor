@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 - [Github repository](https://github.com/Emmanuel-Afrifa/advanced-rock-paper-scissor)
-- [Deployed site](https://newsletter-sign-up-sol.netlify.app/)
+- [Deployed site](https://fun-rock-paper-scissors-sol.netlify.app/)
 
 ## Process
 ### Tools Used
