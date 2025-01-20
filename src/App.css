@@ -17,9 +17,6 @@
 
 button {
     font-family: "Barlow Semi Condensed";
-}
-
-button {
     border: none;
     outline: none;
 }
@@ -73,10 +70,9 @@ button {
     font-weight: bold;
 }
 
+
 .game-start-container {
     position: relative;
-    /* margin-top: 50px; */
-    /* background: url(./images/bg-triangle.svg); */
     background-repeat: no-repeat;
     width: 265px;
     height: 350px;
@@ -89,9 +85,25 @@ button {
     place-items: center;
 }
 
+.game-start-container-expert {
+    position: relative;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 350px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+        "scissors scissors"
+        "spock paper"
+        "lizard rock";
+    box-sizing: border-box;
+    place-items: center;
+}
+
 #paper-ele {
     grid-area: paper;
     justify-self: start;
+    
 }
 
 #scissors-ele {
@@ -102,6 +114,45 @@ button {
 #rock-ele {
     grid-area: rock;
     justify-self: center;
+}
+
+#paper-ele-expert {
+    grid-area: paper;
+    justify-self: end;
+    position: absolute;
+    right: -25px;
+    top: 25px;
+}
+
+#scissors-ele-expert {
+    grid-area: scissors;
+    justify-self: center;
+    position: absolute;
+    top: 35px;
+}
+
+#rock-ele-expert {
+    grid-area: rock;
+    justify-self: end;
+    position: absolute;
+    right: 25px;
+    top: 45px;
+}
+
+#spock-ele-expert {
+    grid-area: spock;
+    justify-self: start;
+    position: absolute;
+    left: -25px;
+    top: 25px;
+}
+
+#lizard-ele-expert {
+    grid-area: lizard;
+    justify-self: start;
+    position: absolute;
+    left: 25px;
+    top: 45px;
 }
 
 .game-start-container::before {
@@ -118,11 +169,38 @@ button {
 }
 
 
+.game-start-container-expert::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    background: url(./images/bg-pentagon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+}
+
 
 .piece-container {
     position: relative;
     width: 100px;
     height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    box-sizing: border-box;
+    box-shadow: inset 0 5px rgba(0,0,0,0.15);
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.piece-container-expert {
+    position: relative;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -146,6 +224,18 @@ button {
     cursor: pointer;
 }
 
+.piece-container-expert::before, .piece-container-expert::after {
+    content: '';
+    width: 130%;
+    height: 130%;
+    z-index: -1;
+    border-radius: 50%;
+    position: absolute;
+    left: -15%;
+    top: -15%;
+    cursor: pointer;
+}
+
 /* .piece-container img {
     transform: scale(0.7);
 } */
@@ -155,7 +245,17 @@ button {
     box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(349, 71%, 52%);
 }
 
+.rock-container-expert::before {
+    background: linear-gradient(to bottom, hsl(349, 70%, 56%), hsl(349, 71%, 52%));
+    box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(349, 71%, 52%);
+}
+
 .paper-container::before {
+    background: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
+    box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(230, 89%, 62%);
+}
+
+.paper-container-expert::before {
     background: linear-gradient(to bottom, hsl(230, 89%, 65%), hsl(230, 89%, 62%));
     box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(230, 89%, 62%);
 }
@@ -165,8 +265,36 @@ button {
     box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(39, 89%, 49%);
 }
 
-.rules-button {
-    width: 160px;
+.scissors-container-expert::before {
+    background: linear-gradient(to bottom, hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+    box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(39, 89%, 49%);
+}
+
+.spock-container-expert::before {
+    background: linear-gradient(to bottom, hsl(189, 58%, 57%), hsl(189, 59%, 53%));
+    box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(189, 59%, 53%);
+}
+
+.lizard-container-expert::before {
+    background: linear-gradient(to bottom, hsl(261, 72%, 63%), hsl(261, 73%, 60%));
+    box-shadow: 0 5px rgba(0, 0, 0, 0.302), 0 5px hsl(261, 73%, 60%);
+}
+
+.rock-container-expert img, .scissors-container-expert img, .paper-container-expert img,
+.spock-container-expert img, .lizard-container-expert img {
+    transform: scale(0.7);
+} 
+
+.extra-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+}
+
+.rules-button, .bonus-button {
+    width: 140px;
     height: 50px;
     border-radius: 10px;
     border: 1px solid white;
@@ -179,7 +307,7 @@ button {
     transition: 0.3s;
 }
 
-.rules-button:hover {
+.rules-button:hover, .bonus-button:hover {
     background-color: white;
     color: hsl(237, 49%, 15%);
 }
@@ -290,6 +418,11 @@ button {
     z-index: -2;
 }
 
+#piece-scissors-expert, #piece-paper-expert, #piece-rock-expert, #piece-spock-expert, #piece-lizard-expert {
+    width: 100px;
+    height: 100px;
+}
+
 .play-again-button {
     background-color: white;
     cursor: pointer;
@@ -371,11 +504,77 @@ button {
         width: 120px;
         height: 120px;
     }
+
+
+    .game-start-container-expert {
+        width: 300px;
+        height: 300px;
+    }
+
+    .piece-container-expert {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        box-sizing: border-box;
+        box-shadow: inset 0 5px rgba(0,0,0,0.15);
+        margin-bottom: 5px;
+        cursor: pointer;
+    }
+
+    #paper-ele-expert {
+        grid-area: paper;
+        justify-self: end;
+        position: absolute;
+        right: -25px;
+        top: 25px;
+    }
     
-    .rules-button {
+    #scissors-ele-expert {
+        grid-area: scissors;
+        justify-self: center;
+        position: absolute;
+        top: 35px;
+    }
+    
+    #rock-ele-expert {
+        grid-area: rock;
+        justify-self: end;
+        position: absolute;
+        right: 25px;
+        top: 90px;
+    }
+    
+    #spock-ele-expert {
+        grid-area: spock;
+        justify-self: start;
+        position: absolute;
+        left: -25px;
+        top: 25px;
+    }
+    
+    #lizard-ele-expert {
+        grid-area: lizard;
+        justify-self: start;
+        position: absolute;
+        left: 25px;
+        top: 90px;
+    }
+
+    
+
+    .extra-buttons {
+        width: 85%;
+    }
+    
+    /* .rules-button {
         align-self: flex-end;
         margin-right: 5%;
-    }
+    } */
 
 
     .rules-container {
@@ -405,22 +604,32 @@ button {
         width: 400px;
         border-radius: 15px;
         box-sizing: border-box;
+        position: relative;
     }
     
     .rules-header {
         margin: 0px;
         font-size: 28px;
         font-weight: bold;
+        position: absolute;
+        top: 25px;
+        left: 30px;
     }
     
     .rules-image {
-        margin-top: -20px;
-        transform: scale(0.7);
+        margin-top: 0px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%) scale(0.7);
     }
 
     .close-button {
         margin: -10px 0px 0px 0px;
         cursor: pointer;
+        position: absolute;
+        top: 42px;
+        right: 30px;
     }
 
     .game-in-session-container {
@@ -467,7 +676,22 @@ button {
         height: 150px;
     }
 
+    #piece-scissors-expert, #piece-paper-expert, #piece-rock-expert, #piece-spock-expert, #piece-lizard-expert {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* #piece-scissors-expert, #piece-paper-expert, #piece-rock-expert, #piece-spock-expert, #piece-lizard-expert {
+        width: 150px;
+        height: 150px;
+    } */
+
     #piece-scissors img, #piece-paper img, #piece-rock img {
+        transform: scale(1.3);
+    }
+
+    #piece-scissors-expert img, #piece-paper-expert img, #piece-rock-expert img, #piece-spock-expert img,
+    #piece-lizard-expert img {
         transform: scale(1.3);
     }
 
@@ -542,6 +766,11 @@ button {
     }
 
     #piece-scissors, #piece-paper, #piece-rock {
+        width: 170px;
+        height: 170px;
+    }
+
+    #piece-scissors-expert, #piece-paper-expert, #piece-rock-expert, #piece-spock-expert, #piece-lizard-expert {
         width: 170px;
         height: 170px;
     }

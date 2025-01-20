@@ -4,6 +4,7 @@ import Header from './components/Header';
 import GamePieces from './components/GamePieces';
 import GameInSession from './components/GameInSession';
 import RulesButton from './components/RulesButton';
+import BonusButton from './components/BonusButton';
 import Rules from './components/Rules';
 import React from 'react';
 
@@ -27,7 +28,8 @@ function App() {
         cpuChose: '',
         winMessage: '',
         score: 0,
-        gameComplete: false
+        gameComplete: false,
+        expertMode: false
     })
 
     // console.log(allStates)
@@ -40,9 +42,14 @@ function App() {
                 <GameInSession allStates={allStates} setStates={setAllStates} /> :
                 <GamePieces allStates={allStates} setStates={setAllStates} />
             }
-            <RulesButton allStates={allStates} setStates={setAllStates} />
-
+            <div className='extra-buttons'>
+                <BonusButton allStates={allStates} setStates={setAllStates} />
+                <RulesButton allStates={allStates} setStates={setAllStates} />  
+            </div>
+            
             { allStates.displayRules && <Rules allStates={allStates} setStates={setAllStates}/>}
+            {/* { allStates.expertMode && } */}
+            
         </div>
     );
 }
