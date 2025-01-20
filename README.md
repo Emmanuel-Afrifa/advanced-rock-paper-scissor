@@ -29,6 +29,7 @@ Users should be able to:
 
 - View the optimal layout for the game depending on their device's screen size
 - Play Rock, Paper, Scissors against the computer
+- Play the expert mode which encompasses the spock and lizard making the game even more interesting
 
 
 ### Links
