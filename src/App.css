@@ -7,6 +7,8 @@
     height: 100vh;
     box-sizing: border-box;
     position: relative;
+    overscroll-behavior: none;
+    overflow: hidden;
 }
 
 button {
@@ -52,7 +54,7 @@ button {
 
 .score {
     padding: 0px;
-    margin: -10px 0px 0px 0px;
+    margin: -5px 0px 0px 0px;
     color: hsl(229, 25%, 31%);
     font-size: 45px;
     font-weight: bold;
