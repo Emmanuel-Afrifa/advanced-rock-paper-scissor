@@ -6,8 +6,8 @@ const Header = ({allStates}) => {
         <div className="header-container">
             <img src={headerImg} alt="" className="header-img" />
             <div className="score-container">
-                <p className="score-label">SCORE</p>
-                <p className="score">{allStates.score}</p>
+                <span className="score-label">SCORE</span>
+                <span className="score">{allStates.score}</span>
             </div>
         </div>
     )

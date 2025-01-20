@@ -1,3 +1,7 @@
+* {
+    font-family: "Barlow Semi Condensed";
+}
+
 .App {
     padding: 25px 0px 10vh 0px;
     display: flex;
@@ -9,6 +13,10 @@
     position: relative;
     overscroll-behavior: none;
     overflow: hidden;
+}
+
+button {
+    font-family: "Barlow Semi Condensed";
 }
 
 button {
@@ -38,25 +46,30 @@ button {
     background-color: white;
     border-radius: 5px;
     text-align: center;
-    padding-top: 6px;
+    padding-top: 10px;
     padding-bottom: 10px;
     box-sizing: border-box;
     border: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 
 .score-label {
     padding: 0px;
     margin: 0px;
+    margin-bottom: 0px;
     color: hsl(229, 64%, 46%);
     font-size: 12px;
     font-weight: bold;
+
 }
 
 .score {
     padding: 0px;
-    margin: -5px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     color: hsl(229, 25%, 31%);
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
 }
 
