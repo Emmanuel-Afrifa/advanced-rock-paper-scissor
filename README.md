@@ -17,10 +17,10 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
 
 ## Overview
 ### Screenshot
-![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_104150_localhost.jpeg)
-![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_10414_localhost.jpeg)
-![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_104137_localhost.jpeg)
-![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_104021_localhost.jpeg)
+![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_11368_localhost.jpeg)
+![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_113627_localhost.jpeg)
+![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_113555_localhost.jpeg)
+![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_113540_localhost.jpeg)
 
 
 ### The challenge
