@@ -21,6 +21,7 @@ This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](h
 ![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_113627_localhost.jpeg)
 ![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_113555_localhost.jpeg)
 ![Screenshot of the webpage](./src/images/Screenshot_20-1-2025_113540_localhost.jpeg)
+![Screenshot of the webpage](./src/images/Screenshot_21-1-2025_64611_fun-rock-paper-scissors-sol.netlify.app.jpeg)
 
 
 ### The challenge
